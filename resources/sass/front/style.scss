@@ -1,0 +1,22 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: lightblue;
+  color: rgb(59, 56, 56);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main{
+  min-height: calc(100vh - 120px);
+}
+
+.container{
+  width: 80%;
+  max-width: 1000px;
+  padding: 30px;
+  margin: 0 auto;
+}
