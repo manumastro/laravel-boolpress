@@ -8,6 +8,7 @@ import HomeComponent from './components/pages/HomeComponent.vue';
 import AboutComponent from './components/pages/AboutComponent.vue';
 import ContactsComponent from './components/pages/ContactsComponent.vue';
 import BlogComponent from './components/pages/BlogComponent.vue';
+import PostDetail from './components/pages/PostDetail.vue';
 
 const router = new VueRouter({
   linkExactActiveClass: 'active',
@@ -32,6 +33,11 @@ const router = new VueRouter({
       path: '/blog',
       name: 'blog',
       component: BlogComponent
+    },
+    {
+      path: '/dettaglio-post/:slug',
+      name: 'detail',
+      component: PostDetail
     },
   ]
 });

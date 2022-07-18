@@ -1,7 +1,10 @@
 <template>
   <div class="post">
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.content }}</p>
+    <h3>
+      <router-link :to="{name: 'detail', params:{slug: post.slug} }">{{post.title}}</router-link>
+    </h3>
+    <h3>{{ formatDate }}</h3>
+    <p>{{ shortContent }}</p>
   </div>
 </template>
 
@@ -10,6 +13,22 @@ export default {
   name: 'PostItem',
   props: {
     post: Object 
+  },
+  computed:{
+    shortContent(){
+      return this.post.content.substr(0,50) + "..."
+    },
+    formatDate(){
+
+      const d = new Date(this.post.updated_at);
+      let day = d.getDay();
+      let month = d.getMonth() + 1;
+      const year = d.getFullYear();
+      if(day < 10) day = '0' + day;
+      if(month < 10) month = '0' + month;
+      return `${day}/${month}/${year}`
+
+    }
   }
 }
 </script>
